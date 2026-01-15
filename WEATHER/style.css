@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1f2937, #0f172a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f9fafb;
+}
+
+/* CONTENEDOR */
+.container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+header button {
+  background: rgba(255,255,255,0.08);
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+header button:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* SEARCH */
+.search {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search input {
+  flex: 1;
+  background: rgba(255,255,255,0.07);
+  border: none;
+  padding: 14px 16px;
+  border-radius: 16px;
+  color: white;
+  font-size: 14px;
+  outline: none;
+}
+
+.search input::placeholder {
+  color: #9ca3af;
+}
+
+.search button {
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  border: none;
+  padding: 14px 18px;
+  border-radius: 16px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.search button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(99,102,241,0.4);
+}
+
+/* WEATHER INFO */
+.weather {
+  margin-top: 10px;
+  animation: fadeUp 0.5s ease;
+}
+
+.weather h2 {
+  font-size: 18px;
+  color: #e5e7eb;
+}
+
+.temp {
+  font-size: 64px;
+  font-weight: 700;
+  margin: 10px 0;
+  background: linear-gradient(to right, #38bdf8, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.weather p {
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.details div {
+  background: rgba(255,255,255,0.05);
+  padding: 12px;
+  border-radius: 16px;
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* OUTLOOK */
+#outlookTitle {
+  margin-top: 25px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.hours {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  margin-top: 12px;
+  padding-bottom: 10px;
+}
+
+.hour-card {
+  min-width: 90px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 14px 10px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: 0.2s;
+}
+
+.hour-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.1);
+}
+
+.hour-card strong {
+  font-size: 13px;
+  color: #e5e7eb;
+}
+
+.hour-card p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* LOADER */
+.loader {
+  width: 45px;
+  height: 45px;
+  border: 3px solid rgba(255,255,255,0.1);
+  border-top: 3px solid #6366f1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 30px auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  color: #f87171;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* ANIMATIONS */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
